@@ -19,6 +19,19 @@
 		F88AE297195C621D009E3F5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88AE27F195C621D009E3F5E /* UIKit.framework */; };
 		F88AE29F195C621D009E3F5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F88AE29D195C621D009E3F5E /* InfoPlist.strings */; };
 		F88AE2A1195C621D009E3F5E /* BaseTabbarControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F88AE2A0195C621D009E3F5E /* BaseTabbarControllerTests.m */; };
+		F89FF560195CFCE500AC7256 /* TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF55F195CFCE500AC7256 /* TabBar.m */; };
+		F89FF563195D3FFC00AC7256 /* TabBarFoot.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF562195D3FFC00AC7256 /* TabBarFoot.m */; };
+		F89FF567195D516900AC7256 /* TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF566195D516900AC7256 /* TabBarButton.m */; };
+		F89FF56F195D526900AC7256 /* tab_icon_chat_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F89FF569195D526900AC7256 /* tab_icon_chat_normal@2x.png */; };
+		F89FF570195D526900AC7256 /* tab_icon_chat_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F89FF56A195D526900AC7256 /* tab_icon_chat_select@2x.png */; };
+		F89FF571195D526900AC7256 /* tab_icon_home_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F89FF56B195D526900AC7256 /* tab_icon_home_normal@2x.png */; };
+		F89FF572195D526900AC7256 /* tab_icon_home_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F89FF56C195D526900AC7256 /* tab_icon_home_select@2x.png */; };
+		F89FF573195D526900AC7256 /* tab_icon_user_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F89FF56D195D526900AC7256 /* tab_icon_user_normal@2x.png */; };
+		F89FF574195D526900AC7256 /* tab_icon_user_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F89FF56E195D526900AC7256 /* tab_icon_user_select@2x.png */; };
+		F89FF577195FDBAE00AC7256 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF576195FDBAE00AC7256 /* MainViewController.m */; };
+		F89FF57B195FDC7200AC7256 /* TabBarOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF57A195FDC7200AC7256 /* TabBarOneViewController.m */; };
+		F89FF57E195FDC7E00AC7256 /* TabBarTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF57D195FDC7E00AC7256 /* TabBarTwoViewController.m */; };
+		F89FF581195FDC8C00AC7256 /* TabBarThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF580195FDC8C00AC7256 /* TabBarThreeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +61,26 @@
 		F88AE29C195C621D009E3F5E /* BaseTabbarControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BaseTabbarControllerTests-Info.plist"; sourceTree = "<group>"; };
 		F88AE29E195C621D009E3F5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F88AE2A0195C621D009E3F5E /* BaseTabbarControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarControllerTests.m; sourceTree = "<group>"; };
+		F89FF55E195CFCE500AC7256 /* TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBar.h; sourceTree = "<group>"; };
+		F89FF55F195CFCE500AC7256 /* TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBar.m; sourceTree = "<group>"; };
+		F89FF561195D3FFC00AC7256 /* TabBarFoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarFoot.h; sourceTree = "<group>"; };
+		F89FF562195D3FFC00AC7256 /* TabBarFoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarFoot.m; sourceTree = "<group>"; };
+		F89FF565195D516900AC7256 /* TabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButton.h; sourceTree = "<group>"; };
+		F89FF566195D516900AC7256 /* TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButton.m; sourceTree = "<group>"; };
+		F89FF569195D526900AC7256 /* tab_icon_chat_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_icon_chat_normal@2x.png"; sourceTree = "<group>"; };
+		F89FF56A195D526900AC7256 /* tab_icon_chat_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_icon_chat_select@2x.png"; sourceTree = "<group>"; };
+		F89FF56B195D526900AC7256 /* tab_icon_home_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_icon_home_normal@2x.png"; sourceTree = "<group>"; };
+		F89FF56C195D526900AC7256 /* tab_icon_home_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_icon_home_select@2x.png"; sourceTree = "<group>"; };
+		F89FF56D195D526900AC7256 /* tab_icon_user_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_icon_user_normal@2x.png"; sourceTree = "<group>"; };
+		F89FF56E195D526900AC7256 /* tab_icon_user_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_icon_user_select@2x.png"; sourceTree = "<group>"; };
+		F89FF575195FDBAE00AC7256 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F89FF576195FDBAE00AC7256 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F89FF579195FDC7200AC7256 /* TabBarOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarOneViewController.h; sourceTree = "<group>"; };
+		F89FF57A195FDC7200AC7256 /* TabBarOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarOneViewController.m; sourceTree = "<group>"; };
+		F89FF57C195FDC7E00AC7256 /* TabBarTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarTwoViewController.h; sourceTree = "<group>"; };
+		F89FF57D195FDC7E00AC7256 /* TabBarTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarTwoViewController.m; sourceTree = "<group>"; };
+		F89FF57F195FDC8C00AC7256 /* TabBarThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarThreeViewController.h; sourceTree = "<group>"; };
+		F89FF580195FDC8C00AC7256 /* TabBarThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarThreeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +140,13 @@
 		F88AE281195C621D009E3F5E /* BaseTabbarController */ = {
 			isa = PBXGroup;
 			children = (
+				F89FF568195D526900AC7256 /* images */,
+				F89FF55D195CFCE500AC7256 /* BaseTabBar */,
 				F88AE28A195C621D009E3F5E /* AppDelegate.h */,
 				F88AE28B195C621D009E3F5E /* AppDelegate.m */,
+				F89FF575195FDBAE00AC7256 /* MainViewController.h */,
+				F89FF576195FDBAE00AC7256 /* MainViewController.m */,
+				F89FF578195FDBD000AC7256 /* TabView */,
 				F88AE28D195C621D009E3F5E /* Images.xcassets */,
 				F88AE282195C621D009E3F5E /* Supporting Files */,
 			);
@@ -142,6 +180,53 @@
 				F88AE29D195C621D009E3F5E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F89FF55D195CFCE500AC7256 /* BaseTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F89FF564195D514000AC7256 /* TabBarButton */,
+				F89FF55E195CFCE500AC7256 /* TabBar.h */,
+				F89FF55F195CFCE500AC7256 /* TabBar.m */,
+				F89FF561195D3FFC00AC7256 /* TabBarFoot.h */,
+				F89FF562195D3FFC00AC7256 /* TabBarFoot.m */,
+			);
+			path = BaseTabBar;
+			sourceTree = "<group>";
+		};
+		F89FF564195D514000AC7256 /* TabBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				F89FF565195D516900AC7256 /* TabBarButton.h */,
+				F89FF566195D516900AC7256 /* TabBarButton.m */,
+			);
+			path = TabBarButton;
+			sourceTree = "<group>";
+		};
+		F89FF568195D526900AC7256 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F89FF569195D526900AC7256 /* tab_icon_chat_normal@2x.png */,
+				F89FF56A195D526900AC7256 /* tab_icon_chat_select@2x.png */,
+				F89FF56B195D526900AC7256 /* tab_icon_home_normal@2x.png */,
+				F89FF56C195D526900AC7256 /* tab_icon_home_select@2x.png */,
+				F89FF56D195D526900AC7256 /* tab_icon_user_normal@2x.png */,
+				F89FF56E195D526900AC7256 /* tab_icon_user_select@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		F89FF578195FDBD000AC7256 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				F89FF579195FDC7200AC7256 /* TabBarOneViewController.h */,
+				F89FF57A195FDC7200AC7256 /* TabBarOneViewController.m */,
+				F89FF57C195FDC7E00AC7256 /* TabBarTwoViewController.h */,
+				F89FF57D195FDC7E00AC7256 /* TabBarTwoViewController.m */,
+				F89FF57F195FDC8C00AC7256 /* TabBarThreeViewController.h */,
+				F89FF580195FDC8C00AC7256 /* TabBarThreeViewController.m */,
+			);
+			name = TabView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +304,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89FF573195D526900AC7256 /* tab_icon_user_normal@2x.png in Resources */,
+				F89FF572195D526900AC7256 /* tab_icon_home_select@2x.png in Resources */,
 				F88AE286195C621D009E3F5E /* InfoPlist.strings in Resources */,
+				F89FF571195D526900AC7256 /* tab_icon_home_normal@2x.png in Resources */,
+				F89FF574195D526900AC7256 /* tab_icon_user_select@2x.png in Resources */,
+				F89FF570195D526900AC7256 /* tab_icon_chat_select@2x.png in Resources */,
 				F88AE28E195C621D009E3F5E /* Images.xcassets in Resources */,
+				F89FF56F195D526900AC7256 /* tab_icon_chat_normal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,8 +330,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89FF560195CFCE500AC7256 /* TabBar.m in Sources */,
+				F89FF57E195FDC7E00AC7256 /* TabBarTwoViewController.m in Sources */,
+				F89FF577195FDBAE00AC7256 /* MainViewController.m in Sources */,
 				F88AE28C195C621D009E3F5E /* AppDelegate.m in Sources */,
+				F89FF581195FDC8C00AC7256 /* TabBarThreeViewController.m in Sources */,
+				F89FF567195D516900AC7256 /* TabBarButton.m in Sources */,
 				F88AE288195C621D009E3F5E /* main.m in Sources */,
+				F89FF57B195FDC7200AC7256 /* TabBarOneViewController.m in Sources */,
+				F89FF563195D3FFC00AC7256 /* TabBarFoot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +537,7 @@
 				F88AE2A6195C621D009E3F5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F88AE2A7195C621D009E3F5E /* Build configuration list for PBXNativeTarget "BaseTabbarControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +546,7 @@
 				F88AE2A9195C621D009E3F5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
