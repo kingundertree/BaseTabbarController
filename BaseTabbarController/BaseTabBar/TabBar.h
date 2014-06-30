@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TabBarFoot.h"
 
 @interface TabBar : UIViewController
 
@@ -16,7 +17,7 @@
 /*
     tabBar 初始化方法
  */
-- (instancetype)initTabBarWithVC:(NSArray *)viewcontrollers tabBarImages:(NSArray *)tabBarImages tabBarTitles:(NSArray *)tabBarTitles;
+- (id)initTabBarWithVC:(NSArray *)viewcontrollers tabBarImages:(NSArray *)tabBarImages tabBarTitles:(NSArray *)tabBarTitles;
 
 //设置默认选中index
 - (void)setDefaultTabBarIndex:(NSInteger)index;

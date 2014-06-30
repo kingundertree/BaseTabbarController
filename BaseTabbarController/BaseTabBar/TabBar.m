@@ -7,9 +7,8 @@
 //
 
 #import "TabBar.h"
-#import "TabBarFoot.h"
 
-@interface TabBar ()
+@interface TabBar ()<tabBarFootDelegate>
 @property(nonatomic, strong) NSArray *viewcontrollers;
 @property(nonatomic, assign) NSInteger seletedTabBarIndex;
 @property(nonatomic, strong) TabBarFoot *tabBarFootView;
@@ -22,28 +21,49 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _seletedTabBarIndex = 0;
-        _defaultIndex = 0;
+        self.seletedTabBarIndex = 0;
+        self.defaultIndex = 0;
     }
     return self;
 }
 
-- (instancetype)initTabBarWithVC:(NSArray *)viewcontrollers tabBarImages:(NSArray *)tabBarImages tabBarTitles:(NSArray *)tabBarTitles{
-    _viewcontrollers = [[NSArray alloc] initWithArray:viewcontrollers];
+- (id)initTabBarWithVC:(NSArray *)viewcontrollers tabBarImages:(NSArray *)tabBarImages tabBarTitles:(NSArray *)tabBarTitles{
+    self.viewcontrollers = [[NSArray alloc] initWithArray:viewcontrollers];
     
-    _defaultVC = (UIViewController *)[_viewcontrollers objectAtIndex:_defaultIndex];
+    self.defaultVC = (UIViewController *)[self.viewcontrollers objectAtIndex:self.defaultIndex];
+    [self.view addSubview:self.defaultVC.view];
     
-    [self.view addSubview:_defaultVC.view];
-    
-    _tabBarFootView = [[TabBarFoot alloc] initTabBarFootView:tabBarImages tabBatTitles:tabBarTitles];
-    [self.view addSubview:_tabBarFootView];
+    self.tabBarFootView = [[TabBarFoot alloc] initTabBarFootView:tabBarImages tabBatTitles:tabBarTitles];
+    self.tabBarFootView.footDelegate = self;
+    [self.view addSubview:self.tabBarFootView];
     
     return self;
 }
 
 - (void)setDefaultTabBarIndex:(NSInteger)index{
-    [_tabBarFootView setSelectedTabBar:0 status:NO];
+    if (self.defaultIndex == index) {
+        return;
+    }
+    self.defaultIndex = index;
+    
+    
+    //移除原view
+    [self.defaultVC.view removeFromSuperview];
+    self.defaultVC = nil;
+
+    //设置新view视图
+    self.defaultVC = (UIViewController *)[self.viewcontrollers objectAtIndex:self.defaultIndex];
+    [self.view insertSubview:self.defaultVC.view belowSubview:self.tabBarFootView];
+
+    [self.tabBarFootView setSelectedTabBar:index status:NO];
 }
+
+#pragma mark --TabBarFootDelegate
+- (void)tabBarFootWillSelect:(NSInteger)selectTabBarIndex
+{
+    [self setDefaultTabBarIndex:selectTabBarIndex];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -58,7 +78,7 @@
 
 #pragma mark -- System method
 - (NSInteger)getSelectedTabBarIndex{
-    return _seletedTabBarIndex;
+    return self.seletedTabBarIndex;
 }
 - (void)switchToTab:(NSInteger)index{
     

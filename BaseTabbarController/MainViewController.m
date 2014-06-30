@@ -23,8 +23,8 @@
     return self;
 }
 
-- (TabBar *)tabBar{
-    if (!_tabBar) {
+- (TabBar *)tabBarView{
+    if (!self.tabBar) {
         //initTabBar
         TabBarOneViewController *oneVC = [[TabBarOneViewController alloc] init];
         UINavigationController *oneNav = [[UINavigationController alloc] initWithRootViewController:oneVC];
@@ -39,11 +39,12 @@
         NSArray *titArr = @[@"one",@"two",@"three"];
         NSArray *iconArr = @[@"tab_icon_home_normal@2x.png",@"tab_icon_home_select@2x.png",@"tab_icon_chat_normal@2x.png",@"tab_icon_chat_select@2x.png",@"tab_icon_user_normal@2x.png",@"tab_icon_user_select@2x.png"];
 
+        self.tabBar = [[TabBar alloc] initTabBarWithVC:bcArr tabBarImages:iconArr tabBarTitles:titArr];
         
-        _tabBar = [[TabBar alloc] initTabBarWithVC:bcArr tabBarImages:iconArr tabBarTitles:titArr];
+        [self.tabBar setDefaultTabBarIndex:0];
     }
     
-    return _tabBar;
+    return self.tabBar;
 }
 
 - (void)viewDidLoad
@@ -53,7 +54,7 @@
     // Do any additional setup after loading the view.
 
     
-    [self.view addSubview:self.tabBar.view];
+    [self.view addSubview:self.tabBarView.view];
 }
 
 

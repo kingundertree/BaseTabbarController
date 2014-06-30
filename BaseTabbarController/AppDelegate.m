@@ -19,7 +19,8 @@
     [self.window makeKeyAndVisible];
     
     MainViewController *mainVC = [[MainViewController alloc] init];
-    [self.window addSubview:mainVC.view];
+    self.window.rootViewController = mainVC;
+//    [self.window addSubview:mainVC.view];
     
     return YES;
 }

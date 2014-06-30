@@ -15,6 +15,6 @@
 //设置按钮状态
 - (void)setStatus:(BOOL)isSeleted;
 
-- (instancetype)initWithData:(CGRect)frame iconNormal:(NSString *)iconNormal iconSelected:(NSString *)iconSelected tabBarTitle:(NSString *)tabBarTitle;
+- (id)initWithData:(CGRect)frame iconNormal:(NSString *)iconNormal iconSelected:(NSString *)iconSelected tabBarTitle:(NSString *)tabBarTitle;
 
 @end
