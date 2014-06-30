@@ -8,6 +8,7 @@
 
 #import "TabBarFoot.h"
 #import "TabBarButton.h"
+#import "TabBarButtonView.h"
 
 #define TabBarFootViewHeight 49.0
 #define TabBarFootBackgoundColor [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]
@@ -49,9 +50,12 @@
     float btnWidth = screenWidth/tabBatTitles.count;
     
     for (int i = 0; i < tabBatTitles.count; i++) {
-        TabBarButton *btn = [[TabBarButton alloc] initWithData:CGRectMake(btnWidth*i, 0, btnWidth, TabBarFootViewHeight) iconNormal:[tabBarImages objectAtIndex:i*2] iconSelected:[tabBarImages objectAtIndex:i*2+1] tabBarTitle:[tabBatTitles objectAtIndex:i]];
+        TabBarButtonView *btnView = [[TabBarButtonView alloc] initWithData:CGRectMake(btnWidth*i, 0, btnWidth, TabBarFootViewHeight) iconNormal:[tabBarImages objectAtIndex:i*2] iconSelected:[tabBarImages objectAtIndex:i*2+1] tabBarTitle:[tabBatTitles objectAtIndex:i]];
+        [self addSubview:btnView];
+
+        TabBarButton *btn = [[TabBarButton alloc] initWithFrame:btnView.frame];
         btn.tag = i;
-        [btn addTarget:self action:@selector(willSelectTabBar:) forControlEvents:UIControlEventTouchDragInside];
+        [btn addTarget:self action:@selector(willSelectTabBar:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
     }
     
@@ -62,10 +66,9 @@
 
 - (void)willSelectTabBar:(TabBarButton *)btn{
     NSInteger tagIndex = btn.tag;
+    DLog(@"tagIndex--->>%ld",tagIndex);
 }
 
 - (void)setSelectedTabBar:(NSInteger)index status:(BOOL)status{
-    TabBarButton *btn = (TabBarButton *)[self viewWithTag:index];
-    [btn setStatus:status];
 }
 @end

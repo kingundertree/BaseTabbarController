@@ -32,6 +32,7 @@
 		F89FF57B195FDC7200AC7256 /* TabBarOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF57A195FDC7200AC7256 /* TabBarOneViewController.m */; };
 		F89FF57E195FDC7E00AC7256 /* TabBarTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF57D195FDC7E00AC7256 /* TabBarTwoViewController.m */; };
 		F89FF581195FDC8C00AC7256 /* TabBarThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF580195FDC8C00AC7256 /* TabBarThreeViewController.m */; };
+		F89FF5841960FB3200AC7256 /* TabBarButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = F89FF5831960FB3200AC7256 /* TabBarButtonView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		F89FF57D195FDC7E00AC7256 /* TabBarTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarTwoViewController.m; sourceTree = "<group>"; };
 		F89FF57F195FDC8C00AC7256 /* TabBarThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarThreeViewController.h; sourceTree = "<group>"; };
 		F89FF580195FDC8C00AC7256 /* TabBarThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarThreeViewController.m; sourceTree = "<group>"; };
+		F89FF5821960FB3200AC7256 /* TabBarButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButtonView.h; sourceTree = "<group>"; };
+		F89FF5831960FB3200AC7256 /* TabBarButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButtonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 			children = (
 				F89FF565195D516900AC7256 /* TabBarButton.h */,
 				F89FF566195D516900AC7256 /* TabBarButton.m */,
+				F89FF5821960FB3200AC7256 /* TabBarButtonView.h */,
+				F89FF5831960FB3200AC7256 /* TabBarButtonView.m */,
 			);
 			path = TabBarButton;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 			files = (
 				F89FF560195CFCE500AC7256 /* TabBar.m in Sources */,
 				F89FF57E195FDC7E00AC7256 /* TabBarTwoViewController.m in Sources */,
+				F89FF5841960FB3200AC7256 /* TabBarButtonView.m in Sources */,
 				F89FF577195FDBAE00AC7256 /* MainViewController.m in Sources */,
 				F88AE28C195C621D009E3F5E /* AppDelegate.m in Sources */,
 				F89FF581195FDC8C00AC7256 /* TabBarThreeViewController.m in Sources */,
