@@ -7,6 +7,7 @@
 //
 
 #import "TabBarThreeViewController.h"
+#import "MainViewController.h"
 
 @interface TabBarThreeViewController ()
 

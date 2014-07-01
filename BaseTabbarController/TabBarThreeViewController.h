@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TabBarThreeViewController : UIViewController
+@property(nonatomic, strong) UIViewController *mainVC;
 
 @end

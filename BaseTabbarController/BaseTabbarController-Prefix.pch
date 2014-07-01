@@ -6,6 +6,9 @@
 
 #import <Availability.h>
 
+#define TabBarFootViewHeight 49.0
+#define TabBarFootBackgoundColor [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]
+
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif

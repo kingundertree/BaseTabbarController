@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController ()<XXTabBarDelegate>
 
 @end
 
@@ -23,10 +23,11 @@
     return self;
 }
 
-- (TabBar *)tabBarView{
+- (XXTabBar *)tabBarView{
     if (!self.tabBar) {
         //initTabBar
         TabBarOneViewController *oneVC = [[TabBarOneViewController alloc] init];
+        oneVC.mainVC = self;
         UINavigationController *oneNav = [[UINavigationController alloc] initWithRootViewController:oneVC];
 
         TabBarTwoViewController *twoVC = [[TabBarTwoViewController alloc] init];
@@ -39,24 +40,37 @@
         NSArray *titArr = @[@"one",@"two",@"three"];
         NSArray *iconArr = @[@"tab_icon_home_normal@2x.png",@"tab_icon_home_select@2x.png",@"tab_icon_chat_normal@2x.png",@"tab_icon_chat_select@2x.png",@"tab_icon_user_normal@2x.png",@"tab_icon_user_select@2x.png"];
 
-        self.tabBar = [[TabBar alloc] initTabBarWithVC:bcArr tabBarImages:iconArr tabBarTitles:titArr];
+        self.tabBar = [[XXTabBar alloc] initTabBarWithVC:bcArr tabBarImages:iconArr tabBarTitles:titArr];
+        self.tabBar.tabBarDelegate = self;
         
-        [self.tabBar setDefaultTabBarIndex:0];
+        [self.tabBar setDefaultTabBarIndex:1];
     }
     
     return self.tabBar;
 }
 
+- (void)hideTabBar:(BOOL)animate{
+    [self.tabBar hideTabBar:animate];
+}
+
+- (void)showTabBar:(BOOL)animate{
+    [self.tabBar showTabBar:animate];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor orangeColor];
     // Do any additional setup after loading the view.
-
     
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [self.view addSubview:self.tabBarView.view];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
+- (void)tabBarDidSelected:(NSInteger)selectTabBarIndex{
+    DLog(@"didselectTabBarIndex--->>%d",selectTabBarIndex);
+}
 
 - (void)didReceiveMemoryWarning
 {

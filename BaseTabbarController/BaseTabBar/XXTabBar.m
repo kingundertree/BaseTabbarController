@@ -6,16 +6,16 @@
 //  Copyright (c) 2014年 xiazer. All rights reserved.
 //
 
-#import "TabBar.h"
+#import "XXTabBar.h"
 
-@interface TabBar ()<tabBarFootDelegate>
+@interface XXTabBar ()<tabBarFootDelegate>
 @property(nonatomic, strong) NSArray *viewcontrollers;
 @property(nonatomic, assign) NSInteger seletedTabBarIndex;
 @property(nonatomic, strong) TabBarFoot *tabBarFootView;
-@property(nonatomic, strong) UIViewController *defaultVC;
+@property(nonatomic, strong) UINavigationController *defaultVC;
 @end
 
-@implementation TabBar
+@implementation XXTabBar
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +30,8 @@
 - (id)initTabBarWithVC:(NSArray *)viewcontrollers tabBarImages:(NSArray *)tabBarImages tabBarTitles:(NSArray *)tabBarTitles{
     self.viewcontrollers = [[NSArray alloc] initWithArray:viewcontrollers];
     
-    self.defaultVC = (UIViewController *)[self.viewcontrollers objectAtIndex:self.defaultIndex];
+    self.defaultVC = (UINavigationController *)[self.viewcontrollers objectAtIndex:self.defaultIndex];
+    self.defaultVC.view.frame = CGRectMake(0, 0, screenWidth, screenHeight - TabBarFootViewHeight);
     [self.view addSubview:self.defaultVC.view];
     
     self.tabBarFootView = [[TabBarFoot alloc] initTabBarFootView:tabBarImages tabBatTitles:tabBarTitles];
@@ -52,16 +53,60 @@
     self.defaultVC = nil;
 
     //设置新view视图
-    self.defaultVC = (UIViewController *)[self.viewcontrollers objectAtIndex:self.defaultIndex];
+    self.defaultVC = (UINavigationController *)[self.viewcontrollers objectAtIndex:self.defaultIndex];
+    self.defaultVC.view.frame = CGRectMake(0, 0, screenWidth, screenHeight - TabBarFootViewHeight);
     [self.view insertSubview:self.defaultVC.view belowSubview:self.tabBarFootView];
 
     [self.tabBarFootView setSelectedTabBar:index status:NO];
+    
+    if (self.tabBarDelegate && [self.tabBarDelegate respondsToSelector:@selector(tabBarDidSelected:)]) {
+        [self.tabBarDelegate tabBarDidSelected:self.defaultIndex];
+    }
 }
 
 #pragma mark --TabBarFootDelegate
 - (void)tabBarFootWillSelect:(NSInteger)selectTabBarIndex
 {
     [self setDefaultTabBarIndex:selectTabBarIndex];
+}
+
+- (void)hideTabBar:(BOOL)animate{
+    CGRect frame = self.tabBarFootView.frame;
+    frame.origin.y += TabBarFootViewHeight;
+
+    if (animate) {
+        [UIView animateWithDuration:0.4 animations:^{
+            self.tabBarFootView.frame = frame;
+        } completion:^(BOOL finished) {
+            nil;
+        }];
+    }else{
+        self.tabBarFootView.frame = frame;
+    }
+}
+- (void)showTabBar:(BOOL)animate{
+    CGRect frame = self.tabBarFootView.frame;
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        if (frame.origin.y == screenHeight - TabBarFootViewHeight) {
+            return;
+        }
+    }else{
+        if (frame.origin.y == screenHeight - TabBarFootViewHeight - 20) {
+            return;
+        }
+    }
+    
+    frame.origin.y -= TabBarFootViewHeight;
+    
+    if (animate) {
+        [UIView animateWithDuration:0.4 animations:^{
+            self.tabBarFootView.frame = frame;
+        } completion:^(BOOL finished) {
+            nil;
+        }];
+    }else{
+        self.tabBarFootView.frame = frame;
+    }
 }
 
 - (void)viewDidLoad

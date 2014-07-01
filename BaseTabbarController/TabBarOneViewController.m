@@ -7,6 +7,8 @@
 //
 
 #import "TabBarOneViewController.h"
+#import "DetailViewController.h"
+#import "MainViewController.h"
 
 @interface TabBarOneViewController ()
 
@@ -23,12 +25,64 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    DLog(@"viewWillAppear");
+    
+    MainViewController *main = (MainViewController *)self.mainVC;
+    [main showTabBar:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    DLog(@"viewDidDisappear");
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"one";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor yellowColor];
+    
+    UITableView *tableList;
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        tableList= [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight-TabBarFootViewHeight) style:UITableViewStylePlain];
+    }else{
+        tableList= [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight-TabBarFootViewHeight -20-44) style:UITableViewStylePlain];
+    }
+    tableList.dataSource = self;
+    tableList.delegate = self;
+    tableList.separatorColor = [UIColor lightGrayColor];
+    [self.view addSubview:tableList];
+}
+
+#pragma mark --UITableViewDataSourceDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 45;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 50;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identify = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"我来自-%d",indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    DetailViewController *detailVC = [[DetailViewController alloc] init];
+    MainViewController *main = (MainViewController *)self.mainVC;
+    [main hideTabBar:YES];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

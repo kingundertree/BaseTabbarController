@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TabBarOneViewController : UIViewController
+@interface TabBarOneViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property(nonatomic, strong) UIViewController *mainVC;
 
 @end

@@ -40,6 +40,7 @@
         
         self.titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 12 - 4, self.frame.size.width, 12)];
         self.titleLab.textColor = [UIColor whiteColor];
+        self.titleLab.backgroundColor = [UIColor clearColor];
         self.titleLab.textAlignment = NSTextAlignmentCenter;
         self.titleLab.font = [UIFont systemFontOfSize:10];
         self.titleLab.text = tabBarTitle;

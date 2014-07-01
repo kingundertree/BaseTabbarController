@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TabBar.h"
+#import "XXTabBar.h"
 #import "TabBarOneViewController.h"
 #import "TabBarTwoViewController.h"
 #import "TabBarThreeViewController.h"
 
 @interface MainViewController : UIViewController
-@property(nonatomic, strong) TabBar *tabBar;
+@property(nonatomic, strong) XXTabBar *tabBar;
+
+- (void)hideTabBar:(BOOL)animate;
+- (void)showTabBar:(BOOL)animate;
+
 @end

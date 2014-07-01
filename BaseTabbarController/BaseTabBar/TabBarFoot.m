@@ -10,9 +10,6 @@
 #import "TabBarButton.h"
 #import "TabBarButtonView.h"
 
-#define TabBarFootViewHeight 49.0
-#define TabBarFootBackgoundColor [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]
-
 @interface TabBarFoot ()
 @property(nonatomic, strong) UIView *underLine;
 @property(nonatomic, assign) float btnWidth;
@@ -38,7 +35,7 @@
     }else{
         originY = screenHeight - TabBarFootViewHeight - 20;
     }
-    
+    DLog(@"originY-->>%f",originY);
     CGRect frame = CGRectMake(0, originY, screenWidth, TabBarFootViewHeight);
     self = [super initWithFrame:frame];
     self.backgroundColor = TabBarFootBackgoundColor;
@@ -68,15 +65,12 @@
 
 - (void)willSelectTabBar:(TabBarButton *)btn{
     NSInteger tagIndex = btn.tag;
-    DLog(@"tagIndex--->>%ld",tagIndex);
-
     if (self.defaultIndex == tagIndex) {
         return;
     }
     
     [self setSelectedTabBar:tagIndex status:YES];
     
-    DLog(@"self.footDelegate--->>%@",self.footDelegate);
     if (self.footDelegate && [self.footDelegate respondsToSelector:@selector(tabBarFootWillSelect:)]) {
         [self.footDelegate tabBarFootWillSelect:tagIndex];
     }

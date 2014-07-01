@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "TabBarFoot.h"
 
-@interface TabBar : UIViewController
+@protocol XXTabBarDelegate <NSObject>
 
+- (void)tabBarDidSelected:(NSInteger)selectTabBarIndex;
 
+@end
+
+@interface XXTabBar : UIViewController
+
+@property(nonatomic, assign) id<XXTabBarDelegate> tabBarDelegate;
 @property(nonatomic, assign) NSInteger defaultIndex;
 
 /*
@@ -26,5 +32,6 @@
 //跳转至指定tab
 - (void)switchToTab:(NSInteger)index;
 
-
+- (void)hideTabBar:(BOOL)animate;
+- (void)showTabBar:(BOOL)animate;
 @end
